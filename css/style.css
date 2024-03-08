@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?&family=Poppins:wght@100;200;300;400;500;600;700;800');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('../images/room.webp') no-repeat center/cover fixed rgba(0, 255, 102, 0.3);
+    background-blend-mode: screen;
+    width: 100%;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+p {
+    font-size: .9rem;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 1em;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    padding: .2em .4em;
+    border-radius: 50%;
+    color: #555;
+    background-color: #a4eb84;
+    box-shadow: 0 0 10px #788d6e;
+    transition: all .3s ease-in-out;
+}
+
+button:hover {
+    color: #757575;
+    background-color: #b4f28e;
+}
+
+#input-field {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    column-gap: 1em;
+    margin-top: 1em;
+}
+
+input {
+    padding: .7em;
+    background-color: #a4eb84;
+    box-shadow: 0 0 10px #788d6e;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    width: 350px;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+#msg-input {
+    grid-column: 1 / -1;
+}
+
+.qa-input {
+    width: 250px;
+}
+
+#qa-btn, #qa-cancel {
+    font-size: .9rem;
+    padding: .5em 1em;
+    border-radius: 20px;
+}
+
+
+/* Bubble */
+.bubble {
+    position: absolute;
+    top: 45%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    margin: 1.5em 15px 1.5em 0;
+    padding: 0 5px;
+    width: 300px;
+    height: 120px;
+    text-align: center;
+    color: #555;
+    font-weight: bold;
+    background: #ffcc75;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.bubble:before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 45px;
+    margin-top: -15px;
+    border: 15px solid transparent;
+    border-left: 15px solid #ffcc75;
+    z-index: 0;
+    transform: rotate(113deg);
+}
+
+.bubble {
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+#bubble2 {
+    width: 130px;
+    top:37%;
+    background-color: #fff;
+}
+
+#bubble2.show {
+    opacity: 1;
+}
+
+#bubble2:before {
+    content: "";
+    position: absolute;
+    bottom: -11px;
+    left: 13px;
+    margin-top: -15px;
+    border: 9px solid #fff;
+    border-radius: 50%;
+    z-index: 0;
+    transform: rotate(120deg);
+}
+
+#bubble2:after {
+    content: "";
+    position: absolute;
+    bottom: -23px;
+    left: 8px;
+    margin-top: -15px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    z-index: 0;
+    transform: rotate(120deg);
+}
+
+/* SVG */
+#tanuki {
+    position: relative;
+    top: 62%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.5));
+}
+
+#tanuki.jump {
+    top: 60%;
+    animation: jump-down 1s ease-in-out infinite;
+}
+
+@keyframes jump-down {
+    100% {
+        top: 62%;
+    }
+}
+
+.eye, .arm {
+    shape-rendering: crispEdges;
+}
+
+#lip-below, #mouth {
+    display: none;
+}
+
+.closeEye {
+    display: none;
+}
+
+.smileEye {
+    display: none;
+}
+
+.eyebrow {
+    display: none;
+}
+
+/* Apple */
+#apple {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* animation: apple-fall 1s ease-in-out 1s; */
+    opacity: 0;
+}
+
+#apple img {
+    width: 60px;
+    height: 60px;
+}
+
+@keyframes apple-fall {
+    100% {
+        top: 55%;
+    }
+}
+
+#apple.show {
+    animation: apple-fall 1s ease-in-out 1s forwards;
+   opacity: 1; 
+}
+
+
+/* Play Button */
+#tanuki.play {
+    animation: animate-tanuki 1s ease-in-out infinite,
+               tanuki-walk 30s ease-in-out infinite;    
+}
+
+@keyframes animate-tanuki {
+    50% {
+        transform: translate(-50%, -50%) rotate(1deg);
+    }
+}
+
+@keyframes tanuki-walk {
+    0% {
+        left: 53%;
+    }
+    25% {
+        left: 30%;
+    }
+    50% {
+        left: 75%;
+    }
+    75% {
+        left: 30%;
+    }
+    100% {
+        left: 53%;
+    }
+}
+
+.arm-left.play {
+    transform: translate(0px, 2px) rotate(1deg);
+    animation: animate-left 1s ease-in-out infinite;
+}
+
+.arm-right.play {
+    transform: translate(-2px, 3px) rotate(-1deg);
+    animation: animate-right 1s ease-in-out infinite;
+}
+
+@keyframes animate-left {
+    100% {
+        transform: translate(-2px, 3px) rotate(-.5deg);
+    }
+}
+
+@keyframes animate-right {
+    100% {
+        transform: translate(0px, 0px) rotate(.5deg);
+    }
+}
+
+.leg-left.play {
+    animation: animate-leg 1s ease-in-out infinite;
+}
+
+.leg-right.play {
+    animation: animate-leg 1s ease-in-out 1.5s infinite;
+}
+
+@keyframes animate-leg {
+    100% {
+        transform: translate(0px, -1.5px) rotate(0deg);
+    }
+    
+}
+
+/* Responsive */
+@media screen and (max-width: 750px) {
+    .bubble {
+        left: 65%;
+    }
+
+    #tanuki {
+        left: 55%;
+    }
+}
+
+
+/* Height */
+@media  screen and (min-height: 920px) {
+    .bubble {
+        top: 55%;
+    }
+
+    #tanuki {
+        top: 68%;
+    }
+}

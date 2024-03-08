@@ -1,0 +1,48 @@
+[   
+    {
+        "question": "hello",
+        "answer": ["hello, how are you?"]
+    },
+    {
+        "question": "how about you",
+        "answer": ["I'm fine, thank you"]
+    },
+    {
+        "question": "thank",
+        "answer": ["My Pleasure!"]
+    },
+    {
+        "question": "your name",
+        "answer": ["My name is Tanuko"]
+    },
+    {
+        "question": "joke",
+        "answer": [
+            "What did the horse say after it tripped? Help! I've fallen and I can't giddyup!",
+            "What do you call an angry carrot? A steamed veggie.",
+            "What would bears be without bees? Ears.",
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "What do you call a fish wearing a crown? A kingfish.",
+            "Why did the scarecrow become a successful politician? Because he was outstanding in his field.",
+            "How do you organize a space party? You planet!",
+            "Why did the bicycle fall over? Because it was two-tired.",
+            "What did the grape do when it got stepped on? Nothing, but it let out a little wine.",
+            "What do you call a cheese that isn't yours? Nacho cheese.",
+            "Why don't skeletons fight each other? They don't have the guts.",
+            "How does a penguin build its house? Igloos it together!",
+            "Why did the math book look sad? Because it had too many problems."
+        ]
+    },
+    {
+        "question": "favourite song|favorite song",
+        "answer": ["Don't stop me now", "Black Bird"]
+    },
+    {
+        "question": "favourite movie|favorite movie|favourite film|favorite film",
+        "answer": ["Star Wars", "Harry Potter"]
+    },
+    {
+        "question": "favourite food|favorite food",
+        "answer": ["I like apples", "I like strawberries", "I like grapes"]
+    }
+]
